@@ -1,4 +1,5 @@
 import { merge, cloneDeep } from 'lodash';
+import { Reducer } from 'redux';
 import {
     APOLLO_OVERWRITE,
     APOLLO_RESET,
@@ -7,7 +8,7 @@ import {
 
 const initialState: any = {};
 
-export function apolloReducer(state = initialState, action: any) {
+export function apolloReducer(state = initialState, action: any): Reducer<any> {
     switch (action.type) {
         case APOLLO_RESET:
             return initialState;
