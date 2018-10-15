@@ -33,7 +33,6 @@
   "dependencies": {
     "apollo-cache": "^1.1.17",
     "apollo-cache-inmemory": "^1.2.10",
-    "redux": "^4.0.0"
   },
   "devDependencies": {
     "@types/graphql": "0.9.4",

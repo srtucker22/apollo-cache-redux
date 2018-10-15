@@ -2,7 +2,7 @@ import { ApolloCache } from 'apollo-cache';
 import gql, { disableFragmentWarnings } from 'graphql-tag';
 import { combineReducers, createStore } from 'redux';
 
-import { ReduxCache } from '..';
+import { ReduxCache } from '../index';
 import { ApolloReducerConfig, NormalizedCache } from 'apollo-cache-inmemory';
 import { apolloReducer } from '../reducer';
 

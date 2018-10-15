@@ -7,14 +7,12 @@ import {
     APOLLO_OVERWRITE,
     APOLLO_RESET,
     APOLLO_WRITE
-} from "./constants";
-import {
-    Store
-} from "redux";
+} from './constants';
+import { Store } from '@libs/midgard-angular/src/lib/modules/store/store';
 
 export interface ReduxNormalizedCacheConfig {
-    reduxRootSelector?: string
-    store: Store<any>
+    reduxRootSelector?: string;
+    store: Store<any>;
 }
 
 export class ReduxNormalizedCache implements NormalizedCache {
@@ -22,7 +20,7 @@ export class ReduxNormalizedCache implements NormalizedCache {
     private reduxRootSelector: string;
 
     constructor(reduxCacheConfig: ReduxNormalizedCacheConfig) {
-        this.reduxRootSelector = reduxCacheConfig.reduxRootSelector || 'apollo';
+        this.reduxRootSelector = reduxCacheConfig.reduxRootSelector || 'apolloReducer';
         this.store = reduxCacheConfig.store;
     }
     public toObject(): NormalizedCacheObject {

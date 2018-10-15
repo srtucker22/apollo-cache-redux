@@ -4,7 +4,8 @@ import {
 import {
     ApolloReducerConfig,
     InMemoryCache,
-    writeResultToStore
+    StoreWriter,
+    defaultNormalizedCacheFactory
 } from 'apollo-cache-inmemory';
 
 import {
@@ -23,9 +24,9 @@ export class ReduxCache extends InMemoryCache {
     }
 
     public write(write: Cache.WriteOptions): void {
-        const data = this.config.storeFactory(cloneDeep(this.data.toObject()));
-
-        writeResultToStore({
+        const data = defaultNormalizedCacheFactory(cloneDeep(this.data.toObject()));
+        const storeWriter = new StoreWriter();
+        storeWriter.writeResultToStore({
             dataId: write.dataId,
             result: write.result,
             variables: write.variables,
