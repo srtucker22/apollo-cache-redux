@@ -7,14 +7,13 @@ import {
     APOLLO_OVERWRITE,
     APOLLO_RESET,
     APOLLO_WRITE
-} from "./constants";
+} from './constants';
 import {
     Store
 } from "redux";
-
 export interface ReduxNormalizedCacheConfig {
-    reduxRootSelector?: string
-    store: Store<any>
+    reduxRootSelector?: string;
+    store: Store<any>;
 }
 
 export class ReduxNormalizedCache implements NormalizedCache {
